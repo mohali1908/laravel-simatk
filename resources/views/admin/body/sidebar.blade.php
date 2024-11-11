@@ -11,14 +11,13 @@
             <ul class="metismenu list-unstyled" id="side-menu">
                 <li class="menu-title">Menu</li>
 
-                <li>
+                <!-- <li>
                     <a href="{{ url('/dashboard') }}" class="waves-effect">
                         <i class="ri-home-fill"></i>
                         <span>Dashboard</span>
                     </a>
-                </li>
-
-
+                </li> 
+                
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
                         <i class="ri-hotel-fill"></i>
@@ -28,7 +27,38 @@
                         <li><a href="{{ route('supplier.all') }}">All Supplier</a></li>
 
                     </ul>
-                </li>
+                </li> -->
+
+                @if(session('menus'))       
+                    @foreach (session('menus') as $menu)
+                        <li>
+                            @if ($menu->children->isNotEmpty()) 
+                                <!-- Parent menu dengan submenu -->
+                                <a href="javascript:void(0);" class="has-arrow waves-effect">
+                                    <i class="{{ $menu->icon }}"></i>
+                                    <span>{{ $menu->name }}</span>
+                                </a>
+                                <!-- Submenu -->
+                                <ul>
+                                    @foreach ($menu->children as $child)
+                                        <li><a href="{{ $child->url }}">{{ $child->name }}</a></li>
+                                    @endforeach
+                                </ul>
+                            @else
+                                <!-- Parent menu tanpa submenu -->
+                                <a href="{{ $menu->url }}" class="waves-effect">
+                                    <i class="{{ $menu->icon }}"></i>
+                                    <span>{{ $menu->name }}</span>
+                                </a>
+                            @endif
+                        </li>
+                    @endforeach
+                @else
+                    <p>No menus available.</p>
+                @endif
+
+
+                
 
 
                 <li>
@@ -143,6 +173,8 @@
                     </ul>
                 </li>
                 @endif
+
+                
 
 
 

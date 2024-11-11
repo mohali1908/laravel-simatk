@@ -10,7 +10,7 @@
     <div class="card">
         <div class="card-body">
 
-            <h4 class="card-title">Add Customer Page </h4><br><br>
+            <h4 class="card-title">Tambah Pengguna </h4><br><br>
             
   
 
@@ -18,7 +18,7 @@
                 @csrf
 
             <div class="row mb-3">
-                <label for="example-text-input" class="col-sm-2 col-form-label">Customer Name </label>
+                <label for="example-text-input" class="col-sm-2 col-form-label">Nama Pengguna</label>
                 <div class="form-group col-sm-10">
                     <input name="name" class="form-control" type="text"    >
                 </div>
@@ -27,7 +27,7 @@
 
 
               <div class="row mb-3">
-                <label for="example-text-input" class="col-sm-2 col-form-label">Customer Mobile </label>
+                <label for="example-text-input" class="col-sm-2 col-form-label">No. HP </label>
                 <div class="form-group col-sm-10">
                     <input name="mobile_no" class="form-control" type="text"    >
                 </div>
@@ -36,7 +36,7 @@
 
 
   <div class="row mb-3">
-                <label for="example-text-input" class="col-sm-2 col-form-label">Customer Email </label>
+                <label for="example-text-input" class="col-sm-2 col-form-label">Email </label>
                 <div class="form-group col-sm-10">
                     <input name="email" class="form-control" type="email"  >
                 </div>
@@ -45,15 +45,15 @@
 
 
   <div class="row mb-3">
-                <label for="example-text-input" class="col-sm-2 col-form-label">Customer Address </label>
+                <label for="example-text-input" class="col-sm-2 col-form-label">Unit</label>
                 <div class="form-group col-sm-10">
-                    <input name="address" class="form-control" type="text"  >
+                    <input name="unit" class="form-control" type="text"  >
                 </div>
             </div>
             <!-- end row -->
 
               <div class="row mb-3">
-                <label for="example-text-input" class="col-sm-2 col-form-label">Customer Image </label>
+                <label for="example-text-input" class="col-sm-2 col-form-label">Photo </label>
                 <div class="form-group col-sm-10">
        <input name="customer_image" class="form-control" type="file"  id="image">
                 </div>
@@ -100,7 +100,7 @@
                  email: {
                     required : true,
                 },
-                 address: {
+                 unit: {
                     required : true,
                 },
                  customer_image: {
@@ -117,8 +117,8 @@
                 email: {
                     required : 'Please Enter Your Email',
                 },
-                address: {
-                    required : 'Please Enter Your Address',
+                unit: {
+                    required : 'Please Enter Your Unit',
                 },
                  customer_image: {
                     required : 'Please Select one Image',

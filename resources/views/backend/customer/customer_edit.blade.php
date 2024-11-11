@@ -46,9 +46,9 @@
 
 
   <div class="row mb-3">
-                <label for="example-text-input" class="col-sm-2 col-form-label">Customer Address </label>
+                <label for="example-text-input" class="col-sm-2 col-form-label">Unit </label>
                 <div class="form-group col-sm-10">
-                    <input name="address" value="{{ $customer->address }}" class="form-control" type="text"  >
+                    <input name="unit" value="{{ $customer->unit }}" class="form-control" type="text"  >
                 </div>
             </div>
             <!-- end row -->
@@ -68,12 +68,8 @@
                 </div>
             </div>
             <!-- end row -->
- 
- 
-
-
         
-<input type="submit" class="btn btn-info waves-effect waves-light" value="Update Customer">
+<input type="submit" class="btn btn-info waves-effect waves-light" value="Update Pengguna">
             </form>
              
            
@@ -101,7 +97,7 @@
                  email: {
                     required : true,
                 },
-                 address: {
+                 unit: {
                     required : true,
                 },
                  
@@ -116,8 +112,8 @@
                 email: {
                     required : 'Please Enter Your Email',
                 },
-                address: {
-                    required : 'Please Enter Your Address',
+                unit: {
+                    required : 'Please Enter Your Unit',
                 },
                  
             },

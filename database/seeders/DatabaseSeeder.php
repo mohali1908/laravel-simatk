@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Database\Seeders\Menu;
 use App\Models\Device;
 use App\Models\Role;
 use App\Models\User;
@@ -22,5 +23,6 @@ class DatabaseSeeder extends Seeder
         app()[PermissionRegistrar::class]->forgetCachedPermissions();
         $this->call(RoleSeeder::class);
         $this->call(UserSeeder::class);
+        $this->call(MenuSeeder::class);
     }
 }

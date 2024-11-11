@@ -10,7 +10,7 @@
     <div class="card">
         <div class="card-body">
 
-            <h4 class="card-title">Add Supplier Page </h4><br><br>
+            <h4 class="card-title">Tambah Pemasok</h4><br><br>
             
   
 
@@ -18,7 +18,7 @@
                 @csrf
 
             <div class="row mb-3">
-                <label for="example-text-input" class="col-sm-2 col-form-label">Supplier Name </label>
+                <label for="example-text-input" class="col-sm-2 col-form-label">Nama Pemasok </label>
                 <div class="form-group col-sm-10">
                     <input name="name" class="form-control" type="text"    >
                 </div>
@@ -27,7 +27,7 @@
 
 
               <div class="row mb-3">
-                <label for="example-text-input" class="col-sm-2 col-form-label">Supplier Mobile </label>
+                <label for="example-text-input" class="col-sm-2 col-form-label">No. Telp/HP Pemasok </label>
                 <div class="form-group col-sm-10">
                     <input name="mobile_no" class="form-control" type="text"    >
                 </div>
@@ -36,7 +36,7 @@
 
 
   <div class="row mb-3">
-                <label for="example-text-input" class="col-sm-2 col-form-label">Supplier Email </label>
+                <label for="example-text-input" class="col-sm-2 col-form-label">Email Pemasok </label>
                 <div class="form-group col-sm-10">
                     <input name="email" class="form-control" type="email"  >
                 </div>
@@ -45,7 +45,7 @@
 
 
   <div class="row mb-3">
-                <label for="example-text-input" class="col-sm-2 col-form-label">Supplier Address </label>
+                <label for="example-text-input" class="col-sm-2 col-form-label">Alamat Pemasok </label>
                 <div class="form-group col-sm-10">
                     <input name="address" class="form-control" type="text"  >
                 </div>
@@ -56,7 +56,7 @@
 
 
         
-<input type="submit" class="btn btn-info waves-effect waves-light" value="Add Supplier">
+<input type="submit" class="btn btn-info waves-effect waves-light" value="Tambah Pemasok">
             </form>
              
            
