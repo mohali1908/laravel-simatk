@@ -10,7 +10,7 @@
     <div class="card">
         <div class="card-body">
 
-            <h4 class="card-title">Edit Customer Page </h4><br><br>
+            <h4 class="card-title">Edit Pegawai </h4><br><br>
             
   
 
@@ -19,7 +19,7 @@
 
             <input type="hidden" name="id" value="{{ $customer->id }}">
             <div class="row mb-3">
-                <label for="example-text-input" class="col-sm-2 col-form-label">Customer Name </label>
+                <label for="example-text-input" class="col-sm-2 col-form-label">Nama</label>
                 <div class="form-group col-sm-10">
                     <input name="name" value="{{ $customer->name }}" class="form-control" type="text"    >
                 </div>
@@ -28,7 +28,7 @@
 
 
               <div class="row mb-3">
-                <label for="example-text-input" class="col-sm-2 col-form-label">Customer Mobile </label>
+                <label for="example-text-input" class="col-sm-2 col-form-label">No. HP </label>
                 <div class="form-group col-sm-10">
                     <input name="mobile_no"  value="{{ $customer->mobile_no }}" class="form-control" type="text"    >
                 </div>
@@ -37,7 +37,7 @@
 
 
   <div class="row mb-3">
-                <label for="example-text-input" class="col-sm-2 col-form-label">Customer Email </label>
+                <label for="example-text-input" class="col-sm-2 col-form-label">Email </label>
                 <div class="form-group col-sm-10">
                     <input name="email"  value="{{ $customer->email }}" class="form-control" type="email"  >
                 </div>
@@ -54,7 +54,7 @@
             <!-- end row -->
 
               <div class="row mb-3">
-                <label for="example-text-input" class="col-sm-2 col-form-label">Customer Image </label>
+                <label for="example-text-input" class="col-sm-2 col-form-label">Photo </label>
                 <div class="form-group col-sm-10">
        <input name="customer_image" class="form-control" type="file"  id="image">
                 </div>
@@ -69,7 +69,7 @@
             </div>
             <!-- end row -->
         
-<input type="submit" class="btn btn-info waves-effect waves-light" value="Update Pengguna">
+<input type="submit" class="btn btn-info waves-effect waves-light" value="Update">
             </form>
              
            

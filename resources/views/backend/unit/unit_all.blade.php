@@ -23,7 +23,7 @@
             <div class="card">
                 <div class="card-body">
 
-    <a href="{{ route('unit.add') }}" class="btn btn-dark btn-rounded waves-effect waves-light" style="float:right;"><i class="fas fa-plus-circle"> Add Unit </i></a> <br>  <br>               
+    <a href="{{ route('unit.add') }}" class="btn btn-dark btn-rounded waves-effect waves-light" style="float:right;"><i class="fas fa-plus-circle"> Tambah Unit </i></a> <br>  <br>               
 
                     <h4 class="card-title">Unit All Data </h4>
                     
@@ -31,8 +31,8 @@
                     <table id="datatable" class="table table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
                         <thead>
                         <tr>
-                            <th width="5%">Sl</th>
-                            <th>Name</th> 
+                            <th width="5%">No.</th>
+                            <th>Unit</th> 
                             <th width="20%">Action</th>
                             
                         </thead>

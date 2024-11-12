@@ -9,7 +9,7 @@
                         <div class="row">
                             <div class="col-12">
                                 <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                                    <h4 class="mb-sm-0">Daftar Pengguna</h4>
+                                    <h4 class="mb-sm-0">Daftar Pegawai</h4>
 
                                      
 
@@ -23,9 +23,9 @@
             <div class="card">
                 <div class="card-body">
 
-    <a href="{{ route('customer.add') }}" class="btn btn-dark btn-rounded waves-effect waves-light" style="float:right;"><i class="fas fa-plus-circle"> Tambah Pengguna </i></a> <br>  <br>               
+    <a href="{{ route('customer.add') }}" class="btn btn-dark btn-rounded waves-effect waves-light" style="float:right;"><i class="fas fa-plus-circle"> Tambah Pegawai </i></a> <br>  <br>               
 
-                    <h4 class="card-title">Senua Daftar Pengguna </h4>
+                    <h4 class="card-title">Data Pegawai </h4>
                     
 
                     <table id="datatable" class="table table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">

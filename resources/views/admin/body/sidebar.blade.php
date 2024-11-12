@@ -27,6 +27,31 @@
                         <li><a href="{{ route('supplier.all') }}">All Supplier</a></li>
 
                     </ul>
+                </li> 
+                
+                 <li>
+                    <a href="javascript: void(0);" class="has-arrow waves-effect">
+                        <i class="ri-shield-user-fill"></i>
+                        <span>Manage Customers</span>
+                    </a>
+                    <ul class="sub-menu" aria-expanded="false">
+                        <li><a href="{{ route('customer.all') }}">All Customers</a></li>
+                        <li><a href="{{ route('credit.customer') }}">Credit Customers</a></li>
+
+                        <li><a href="{{ route('paid.customer') }}">Paid Customers</a></li>
+                        <li><a href="{{ route('customer.wise.report') }}">Customer Report</a></li>
+
+                    </ul>
+                </li> 
+                <li>
+                    <a href="javascript: void(0);" class="has-arrow waves-effect">
+                        <i class="ri-delete-back-fill"></i>
+                        <span>Manage Units</span>
+                    </a>
+                    <ul class="sub-menu" aria-expanded="false">
+                        <li><a href="{{ route('unit.all') }}">All Unit</a></li>
+
+                    </ul>
                 </li> -->
 
                 @if(session('menus'))       
@@ -61,32 +86,10 @@
                 
 
 
-                <li>
-                    <a href="javascript: void(0);" class="has-arrow waves-effect">
-                        <i class="ri-shield-user-fill"></i>
-                        <span>Manage Customers</span>
-                    </a>
-                    <ul class="sub-menu" aria-expanded="false">
-                        <li><a href="{{ route('customer.all') }}">All Customers</a></li>
-                        <li><a href="{{ route('credit.customer') }}">Credit Customers</a></li>
-
-                        <li><a href="{{ route('paid.customer') }}">Paid Customers</a></li>
-                        <li><a href="{{ route('customer.wise.report') }}">Customer Report</a></li>
-
-                    </ul>
-                </li>
+              
 
 
-                <li>
-                    <a href="javascript: void(0);" class="has-arrow waves-effect">
-                        <i class="ri-delete-back-fill"></i>
-                        <span>Manage Units</span>
-                    </a>
-                    <ul class="sub-menu" aria-expanded="false">
-                        <li><a href="{{ route('unit.all') }}">All Unit</a></li>
-
-                    </ul>
-                </li>
+                
 
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
@@ -139,12 +142,6 @@
 
                     </ul>
                 </li>
-
-
-
-
-
-
 
                 <li class="menu-title">Stock</li>
 

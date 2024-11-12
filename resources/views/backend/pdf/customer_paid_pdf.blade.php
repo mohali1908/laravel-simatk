@@ -8,12 +8,12 @@
         <div class="row">
             <div class="col-12">
                 <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                    <h4 class="mb-sm-0">Customer Paid Report</h4>
+                    <h4 class="mb-sm-0">Report Penggunaan Barang</h4>
 
                     <div class="page-title-right">
                         <ol class="breadcrumb m-0">
                             <li class="breadcrumb-item"><a href="javascript: void(0);"> </a></li>
-                            <li class="breadcrumb-item active">Customer Paid Report</li>
+                            <li class="breadcrumb-item active">Report Penggunaan Barang</li>
                         </ol>
                     </div>
 
@@ -33,25 +33,11 @@
 
                                     <h3>
                                         <img src="{{ asset('backend/assets/images/logo-sm.png') }}" alt="logo"
-                                            height="24" /> Victory Code
+                                            height="24" /> PA-Cilegon
                                     </h3>
                                 </div>
                                 <hr>
 
-                                <div class="row">
-                                    <div class="col-6 mt-4">
-                                        <address>
-                                            <strong>Victory Code</strong><br>
-                                            Adiatna Sukmana<br>
-                                            a@victorycode.id
-                                        </address>
-                                    </div>
-                                    <div class="col-6 mt-4 text-end">
-                                        <address>
-
-                                        </address>
-                                    </div>
-                                </div>
                             </div>
                         </div>
 
@@ -68,17 +54,11 @@
                                             <table class="table">
                                                 <thead>
                                                     <tr>
-                                                        <td><strong>Sl </strong></td>
-                                                        <td class="text-center"><strong>Customer Name </strong></td>
-                                                        <td class="text-center"><strong>Invoice No </strong>
-                                                        </td>
-                                                        <td class="text-center"><strong>Date</strong>
-                                                        </td>
-
-                                                        <td class="text-center"><strong>Due Amount </strong>
-                                                        </td>
-
-
+                                                        <td><strong>No. </strong></td>
+                                                        <td class="text-center"><strong>Nama Pengguna </strong></td>
+                                                        <td class="text-center"><strong>Invoice No </strong></td>
+                                                        <td class="text-center"><strong>Tanggal</strong></td>
+                                                        <!-- <td class="text-center"><strong>Due Amount </strong></td> -->
                                                     </tr>
                                                 </thead>
                                                 <tbody>
@@ -93,9 +73,8 @@
                                                         <td class="text-center"> {{ $item['customer']['name'] }} </td>
                                                         <td class="text-center"> #{{ $item['invoice']['invoice_no'] }}
                                                         </td>
-                                                        <td class="text-center"> {{
-                                                            date('d-m-Y',strtotime($item['invoice']['date'])) }} </td>
-                                                        <td class="text-center"> {{ $item->due_amount }} </td>
+                                                        <td class="text-center"> {{date('d-m-Y',strtotime($item['invoice']['date'])) }} </td>
+                                                        <!-- <td class="text-center"> {{ $item->due_amount }} </td> -->
 
                                                     </tr>
                                                     @php
@@ -105,7 +84,7 @@
 
 
 
-                                                    <tr>
+                                                    <!-- <tr>
                                                         <td class="no-line"></td>
                                                         <td class="no-line"></td>
                                                         <td class="no-line"></td>
@@ -115,13 +94,13 @@
                                                         <td class="no-line text-end">
                                                             <h4 class="m-0">Rp{{ $total_due}}</h4>
                                                         </td>
-                                                    </tr>
+                                                    </tr> -->
                                                 </tbody>
                                             </table>
                                         </div>
 
                                         @php
-                                        $date = new DateTime('now', new DateTimeZone('Asia/Dhaka'));
+                                        $date = new DateTime('now', new DateTimeZone('Asia/Jakarta'));
                                         @endphp
                                         <i>Printing Time : {{ $date->format('F j, Y, g:i a') }}</i>
 

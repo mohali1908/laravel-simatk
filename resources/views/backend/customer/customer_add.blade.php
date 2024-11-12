@@ -10,7 +10,7 @@
     <div class="card">
         <div class="card-body">
 
-            <h4 class="card-title">Tambah Pengguna </h4><br><br>
+            <h4 class="card-title">Tambah Pegawai </h4><br><br>
             
   
 
@@ -18,7 +18,7 @@
                 @csrf
 
             <div class="row mb-3">
-                <label for="example-text-input" class="col-sm-2 col-form-label">Nama Pengguna</label>
+                <label for="example-text-input" class="col-sm-2 col-form-label">Nama</label>
                 <div class="form-group col-sm-10">
                     <input name="name" class="form-control" type="text"    >
                 </div>
@@ -72,7 +72,7 @@
 
 
         
-<input type="submit" class="btn btn-info waves-effect waves-light" value="Add Customer">
+<input type="submit" class="btn btn-info waves-effect waves-light" value="Tambah">
             </form>
              
            
