@@ -14,6 +14,7 @@ use App\Http\Controllers\Pos\InvoiceController;
 use App\Http\Controllers\Pos\RoleController;
 use App\Http\Controllers\Pos\StockController;
 use App\Http\Controllers\Pos\UserController;
+use App\Http\Controllers\RequestController;
 
 Route::get('/pw', function () {
     dd(bcrypt('admin'));
@@ -78,6 +79,16 @@ Route::middleware(['auth', 'verified'])->group(function () {
         Route::get('/customer/wise/paid/report', 'CustomerWisePaidReport')->name('customer.wise.paid.report');
     });
 
+
+    // Customer All Route
+    Route::controller(RequestController::class)->group(function () {
+        Route::get('/request/add', 'RequestAdd')->name('request.add');
+        Route::post('/request/store', 'RequestStore')->name('request.store');
+        Route::get('/request/edit/{id}', 'RequestEdit')->name('request.edit');
+        Route::post('/request/update', 'RequestUpdate')->name('request.update');
+        Route::get('/request/delete/{id}', 'RequestDelete')->name('request.delete');
+    
+    });
 
     // Unit All Route
     Route::controller(UnitController::class)->group(function () {
