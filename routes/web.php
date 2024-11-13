@@ -14,7 +14,9 @@ use App\Http\Controllers\Pos\InvoiceController;
 use App\Http\Controllers\Pos\RoleController;
 use App\Http\Controllers\Pos\StockController;
 use App\Http\Controllers\Pos\UserController;
-use App\Http\Controllers\RequestController;
+use App\Http\Controllers\Pos\RequestController;
+use App\Http\Controllers\Pos\EmployeeController;
+use App\Models\Employee;
 
 Route::get('/pw', function () {
     dd(bcrypt('admin'));
@@ -79,8 +81,17 @@ Route::middleware(['auth', 'verified'])->group(function () {
         Route::get('/customer/wise/paid/report', 'CustomerWisePaidReport')->name('customer.wise.paid.report');
     });
 
+    Route::controller(EmployeeController::class)->group(function () {
+        Route::get('/employee/all', 'EmployeeAll')->name('employee.all');
+        Route::get('/employee/add', 'EmployeeAdd')->name('employee.add');
+        Route::post('/employee/store', 'EmployeeStore')->name('employee.store');
+        Route::get('/employee/edit/{id}', 'EmployeeEdit')->name('employee.edit');
+        Route::post('/employee/update', 'EmployeeUpdate')->name('employee.update');
+        Route::get('/employee/delete/{id}', 'EmployeeDelete')->name('employee.delete');
+    });
 
-    // Customer All Route
+
+    // Request All Route
     Route::controller(RequestController::class)->group(function () {
         Route::get('/request/add', 'RequestAdd')->name('request.add');
         Route::post('/request/store', 'RequestStore')->name('request.store');

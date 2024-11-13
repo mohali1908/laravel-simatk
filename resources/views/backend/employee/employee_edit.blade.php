@@ -10,53 +10,50 @@
     <div class="card">
         <div class="card-body">
 
-            <h4 class="card-title">Tambah Supplier</h4><br><br>
+            <h4 class="card-title">Edit Pegawai </h4><br><br>
             
   
 
-            <form method="post" action="{{ route('supplier.store') }}" id="myForm" >
+    <form method="post" action="{{ route('employee.update') }}" id="myForm" enctype="multipart/form-data" >
                 @csrf
 
+            <input type="hidden" name="id" value="{{ $employee->id }}">
             <div class="row mb-3">
-                <label for="example-text-input" class="col-sm-2 col-form-label">Nama Supplier </label>
+                <label for="example-text-input" class="col-sm-2 col-form-label">Nama</label>
                 <div class="form-group col-sm-10">
-                    <input name="name" class="form-control" type="text"    >
+                    <input name="name" value="{{ $employee->name }}" class="form-control" type="text"    >
                 </div>
             </div>
             <!-- end row -->
 
+
+
+
+  <div class="row mb-3">
+                <label for="example-text-input" class="col-sm-2 col-form-label">Unit </label>
+                <div class="form-group col-sm-10">
+                    <input name="unit" value="{{ $employee->unit }}" class="form-control" type="text"  >
+                </div>
+            </div>
+            <!-- end row -->
 
               <div class="row mb-3">
-                <label for="example-text-input" class="col-sm-2 col-form-label">No. Telp/HP Supplier </label>
+                <label for="example-text-input" class="col-sm-2 col-form-label">Photo </label>
                 <div class="form-group col-sm-10">
-                    <input name="mobile_no" class="form-control" type="text"    >
+       <input name="image" class="form-control" type="file"  id="image">
                 </div>
             </div>
             <!-- end row -->
 
-
-  <div class="row mb-3">
-                <label for="example-text-input" class="col-sm-2 col-form-label">Email Supplier </label>
-                <div class="form-group col-sm-10">
-                    <input name="email" class="form-control" type="email"  >
+              <div class="row mb-3">
+                 <label for="example-text-input" class="col-sm-2 col-form-label">  </label>
+                <div class="col-sm-10">
+   <img id="showImage" class="rounded avatar-lg" src="{{ asset($employee->image) }}" alt="Card image cap">
                 </div>
             </div>
             <!-- end row -->
-
-
-  <div class="row mb-3">
-                <label for="example-text-input" class="col-sm-2 col-form-label">Alamat Supplier </label>
-                <div class="form-group col-sm-10">
-                    <input name="address" class="form-control" type="text"  >
-                </div>
-            </div>
-            <!-- end row -->
- 
- 
-
-
         
-<input type="submit" class="btn btn-info waves-effect waves-light" value="Tambah Supplier">
+<input type="submit" class="btn btn-info waves-effect waves-light" value="Update">
             </form>
              
            
@@ -78,29 +75,19 @@
                 name: {
                     required : true,
                 }, 
-                 mobile_no: {
+                 unit: {
                     required : true,
                 },
-                 email: {
-                    required : true,
-                },
-                 address: {
-                    required : true,
-                },
+                 
             },
             messages :{
                 name: {
                     required : 'Please Enter Your Name',
                 },
-                mobile_no: {
-                    required : 'Please Enter Your Mobile Number',
+                unit: {
+                    required : 'Please Enter Your Unit',
                 },
-                email: {
-                    required : 'Please Enter Your Email',
-                },
-                address: {
-                    required : 'Please Enter Your Address',
-                },
+                 
             },
             errorElement : 'span', 
             errorPlacement: function (error,element) {
@@ -116,6 +103,21 @@
         });
     });
     
+</script>
+
+
+<script type="text/javascript">
+    
+    $(document).ready(function(){
+        $('#image').change(function(e){
+            var reader = new FileReader();
+            reader.onload = function(e){
+                $('#showImage').attr('src',e.target.result);
+            }
+            reader.readAsDataURL(e.target.files['0']);
+        });
+    });
+
 </script>
 
 

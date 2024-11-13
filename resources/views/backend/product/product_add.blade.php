@@ -10,7 +10,7 @@
     <div class="card">
         <div class="card-body">
 
-            <h4 class="card-title">Add Product Page </h4><br><br>
+            <h4 class="card-title">Daftar Product  </h4><br><br>
             
   
 
@@ -18,7 +18,7 @@
                 @csrf
 
             <div class="row mb-3">
-                <label for="example-text-input" class="col-sm-2 col-form-label">Product Name </label>
+                <label for="example-text-input" class="col-sm-2 col-form-label">Nama </label>
                 <div class="form-group col-sm-10">
                     <input name="name" class="form-control" type="text"    >
                 </div>
@@ -27,7 +27,7 @@
 
 
             <div class="row mb-3">
-        <label class="col-sm-2 col-form-label">Supplier Name </label>
+        <label class="col-sm-2 col-form-label">Nama Supplier  </label>
         <div class="col-sm-10">
             <select name="supplier_id" class="form-select" aria-label="Default select example">
                 <option selected="">Open this select menu</option>
@@ -40,7 +40,7 @@
   <!-- end row -->
 
       <div class="row mb-3">
-        <label class="col-sm-2 col-form-label">Unit Name </label>
+        <label class="col-sm-2 col-form-label">Unit </label>
         <div class="col-sm-10">
             <select name="unit_id" class="form-select" aria-label="Default select example">
                 <option selected="">Open this select menu</option>
@@ -55,7 +55,7 @@
 
 
       <div class="row mb-3">
-        <label class="col-sm-2 col-form-label">Category Name </label>
+        <label class="col-sm-2 col-form-label">Nama Kategori </label>
         <div class="col-sm-10">
             <select name="category_id" class="form-select" aria-label="Default select example">
                 <option selected="">Open this select menu</option>
@@ -68,7 +68,7 @@
   <!-- end row -->
  
         
-<input type="submit" class="btn btn-info waves-effect waves-light" value="Add Product">
+<input type="submit" class="btn btn-info waves-effect waves-light" value="Tambah">
             </form>
              
            

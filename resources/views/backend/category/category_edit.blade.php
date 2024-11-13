@@ -10,7 +10,7 @@
     <div class="card">
         <div class="card-body">
 
-            <h4 class="card-title">Edit Category Page </h4><br><br>
+            <h4 class="card-title">Edit Kategori </h4><br><br>
             
   
 
@@ -19,7 +19,7 @@
 
             <input type="hidden" name="id" value="{{ $category->id }}">
             <div class="row mb-3">
-                <label for="example-text-input" class="col-sm-2 col-form-label">Category Name </label>
+                <label for="example-text-input" class="col-sm-2 col-form-label">Nama Kategori </label>
                 <div class="form-group col-sm-10">
                     <input name="name" value="{{ $category->name }}" class="form-control" type="text"    >
                 </div>
@@ -27,7 +27,7 @@
             <!-- end row --> 
 
         
-<input type="submit" class="btn btn-info waves-effect waves-light" value="Update Category">
+<input type="submit" class="btn btn-info waves-effect waves-light" value="Update">
             </form>
              
            
