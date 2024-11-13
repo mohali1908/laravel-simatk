@@ -10,19 +10,19 @@
     <div class="card">
         <div class="card-body">
 
-            <h4 class="card-title">Add Purchase  </h4><br><br>
+            <h4 class="card-title">Tambah Pembelian  </h4><br><br>
             
     <div class="row">
         <div class="col-md-4">
             <div class="md-3">
-                <label for="example-text-input" class="form-label">Date</label>
+                <label for="example-text-input" class="form-label">Tanggal</label>
                  <input class="form-control example-date-input" name="date" type="date"  id="date">
             </div>
         </div>
 
         <div class="col-md-4">
             <div class="md-3">
-                <label for="example-text-input" class="form-label">Purchase No</label>
+                <label for="example-text-input" class="form-label">No. Pembelian</label>
                  <input class="form-control example-date-input" name="purchase_no" type="text"  id="purchase_no">
             </div>
         </div>
@@ -30,9 +30,9 @@
 
         <div class="col-md-4">
             <div class="md-3">
-                <label for="example-text-input" class="form-label">Supplier Name </label>
+                <label for="example-text-input" class="form-label">Nama Supplier </label>
                 <select id="supplier_id" name="supplier_id" class="form-select select2" aria-label="Default select example">
-                <option selected="">Open this select menu</option>
+                <option selected="">Pilih Supplier</option>
                 @foreach($supplier as $supp)
                 <option value="{{ $supp->id }}">{{ $supp->name }}</option>
                @endforeach
@@ -43,9 +43,9 @@
 
        <div class="col-md-4">
             <div class="md-3">
-                <label for="example-text-input" class="form-label">Category Name </label>
+                <label for="example-text-input" class="form-label">Nama Kategori </label>
                 <select name="category_id" id="category_id" class="form-select select2" aria-label="Default select example">
-                <option selected="">Open this select menu</option>
+                <option selected="">Pilih Kategori</option>
                 
                 </select>
             </div>
@@ -54,9 +54,9 @@
 
          <div class="col-md-4">
             <div class="md-3">
-                <label for="example-text-input" class="form-label">Product Name </label>
+                <label for="example-text-input" class="form-label">Nama Produk</label>
                 <select name="product_id" id="product_id" class="form-select select2" aria-label="Default select example">
-                <option selected="">Open this select menu</option>
+                <option selected="">Pilih Produk</option>
                
                 </select>
             </div>
@@ -68,7 +68,7 @@
         <label for="example-text-input" class="form-label" style="margin-top:43px;">  </label>
         
 
-        <i class="btn btn-secondary btn-rounded waves-effect waves-light fas fa-plus-circle addeventmore"> Add More</i>
+        <i class="btn btn-secondary btn-rounded waves-effect waves-light fas fa-plus-circle addeventmore"> Tambah Barang</i>
     </div>
 </div>
 
@@ -87,12 +87,12 @@
             <table class="table-sm table-bordered" width="100%" style="border-color: #ddd;">
                 <thead>
                     <tr>
-                        <th>Category</th>
-                        <th>Product Name </th>
-                        <th>PSC/KG</th>
+                        <th>Kategori</th>
+                        <th>Nama Produk </th>
+                        <th>Unit</th>
                         <th>Unit Price </th>
-                        <th>Description</th>
-                        <th>Total Price</th>
+                        <th>Keterangan</th>
+                        <th>Total Harga</th>
                         <th>Action</th> 
 
                     </tr>
@@ -114,7 +114,7 @@
                 </tbody>                
             </table><br>
             <div class="form-group">
-                <button type="submit" class="btn btn-info" id="storeButton"> Purchase Store</button>
+                <button type="submit" class="btn btn-info" id="storeButton"> Tambah Pembelian</button>
                 
             </div>
             

@@ -9,7 +9,7 @@
                         <div class="row">
                             <div class="col-12">
                                 <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                                    <h4 class="mb-sm-0">Purchase All</h4>
+                                    <h4 class="mb-sm-0">Pembelian</h4>
 
                                      
 
@@ -23,21 +23,21 @@
             <div class="card">
                 <div class="card-body">
 
-    <a href="{{ route('purchase.add') }}" class="btn btn-dark btn-rounded waves-effect waves-light" style="float:right;"><i class="fas fa-plus-circle"> Add Purchase </i></a> <br>  <br>               
+    <a href="{{ route('purchase.add') }}" class="btn btn-dark btn-rounded waves-effect waves-light" style="float:right;"><i class="fas fa-plus-circle"> Tambah Pembelian </i></a> <br>  <br>               
 
-                    <h4 class="card-title">Purchase All Data </h4>
+                    <h4 class="card-title">Data Pembelian </h4>
                     
 
                     <table id="datatable" class="table table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
                         <thead>
                         <tr>
-                            <th>Sl</th>
-                            <th>Purhase No</th> 
-                            <th>Date </th>
+                            <th>No.</th>
+                            <th>No. Pembelian</th> 
+                            <th>Tanggal </th>
                             <th>Supplier</th>
-                            <th>Category</th> 
+                            <th>Kategori</th> 
                             <th>Qty</th> 
-                            <th>Product Name</th> 
+                            <th>Nama Produk/th> 
                             <th>Status</th>
                             <th>Action</th>
                             
