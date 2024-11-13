@@ -11,6 +11,8 @@ use App\Models\Unit;
 use App\Models\Category;
 use Auth;
 use Illuminate\Support\Carbon;
+use Barryvdh\DomPDF\Facade\Pdf;
+
 
 class PurchaseController extends Controller
 {
@@ -131,7 +133,31 @@ class PurchaseController extends Controller
         $end_date = date('Y-m-d',strtotime($request->end_date));
         return view('backend.pdf.daily_purchase_report_pdf',compact('allData','start_date','end_date'));
 
+
+
     }// End Method 
+
+    public function viewPDF(Request $request)
+    {
+        // Retrieve start and end dates from the request
+        $start_date = $request->query('start_date', date('Y-m-d')); // Default to today if not provided
+        $end_date = $request->query('end_date', date('Y-m-d'));     // Default to today if not provided
+
+        // Convert to date format and fetch data within the date range
+        $sdate = date('Y-m-d', strtotime($start_date));
+        $edate = date('Y-m-d', strtotime($end_date));
+
+        $allData = Purchase::whereBetween('date', [$sdate, $edate])
+                            ->where('status', '1')
+                            ->get();
+
+        // Load the view and pass data for the PDF
+        $pdf = Pdf::loadView('pdf.sample', compact('allData', 'start_date', 'end_date'));
+
+        // Download the PDF with a filename
+        return $pdf->download('daily_purchase_report_' . $start_date . '_to_' . $end_date . '.pdf');
+
+    }
 
 
 

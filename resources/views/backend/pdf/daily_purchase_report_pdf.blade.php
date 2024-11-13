@@ -55,8 +55,6 @@
                             </div>
                         </div>
 
-
-
                         <div class="row">
                             <div class="col-12">
                                 <div>
@@ -73,9 +71,6 @@
 
                             </div>
                         </div> <!-- end row -->
-
-
-
 
 
                         <div class="row">
@@ -153,7 +148,7 @@
                                                 <a href="javascript:window.print()"
                                                     class="btn btn-success waves-effect waves-light"><i
                                                         class="fa fa-print"></i></a>
-                                                <a href="#"
+                                                <a href="{{ route('daily.view.pdf') }}"
                                                     class="btn btn-primary waves-effect waves-light ms-2">Download</a>
                                             </div>
                                         </div>

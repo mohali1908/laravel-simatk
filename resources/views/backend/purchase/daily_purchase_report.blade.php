@@ -10,7 +10,7 @@
     <div class="card">
         <div class="card-body">
 
-            <h4 class="card-title">Daily Purchase Report </h4><br><br>
+            <h4 class="card-title">Laporan Pembelian </h4><br><br>
              
 <form method="GET" action="{{ route('daily.purchase.pdf') }}" target="_blank" id="myForm">
     <div class="row">
@@ -19,7 +19,7 @@
 
         <div class="col-md-4">
             <div class="md-3 form-group">
-                <label for="example-text-input" class="form-label">Start Date</label>
+                <label for="example-text-input" class="form-label">Tanggal Awal </label>
                  <input class="form-control example-date-input" name="start_date" type="date"  id="start_date" placeholder="YY-MM-DD">
             </div>
         </div>
@@ -27,7 +27,7 @@
          
         <div class="col-md-4">
             <div class="md-3 form-group">
-                <label for="example-text-input" class="form-label">End Date</label>
+                <label for="example-text-input" class="form-label">Tanggal Akhir</label>
                  <input class="form-control example-date-input" name="end_date" type="date"  id="end_date" placeholder="YY-MM-DD">
             </div>
         </div>
