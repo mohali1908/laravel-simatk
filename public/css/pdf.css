@@ -1,42 +1,37 @@
-h4 {
-    margin: 0;
+ /* Setting CSS bagian header/ kop  */
+
+  table.page_header {width: 1020px; border: none; background-color: #DDDDFF; border-bottom: solid 1mm #AAAADD; padding: 2mm }
+  table.page_footer {width: 1020px; border: none; background-color: #DDDDFF; border-top: solid 1mm #AAAADD; padding: 2mm}
+  
+
+/* 
+ Setting Margin header/ kop 
+ Setting CSS Tabel data yang akan ditampilkan  */
+
+ .tabel2 {
+  border-collapse: collapse;
+  margin-left: 5px;
 }
-.w-full {
-    width: 100%;
+.tabel2 th, .tabel2 td {
+  padding: 5px 5px;
+  border: 1px solid #000;
 }
-.w-half {
-    width: 50%;
+div.kanan {
+ position: absolute;
+ bottom: 100px;
+ right: 50px;
+
 }
-.margin-top {
-    margin-top: 1.25rem;
+
+div.tengah {
+ position: absolute;
+ bottom: 100px;
+ right: 330px;
+
 }
-.footer {
-    font-size: 0.875rem;
-    padding: 1rem;
-    background-color: rgb(241 245 249);
-}
-table {
-    width: 100%;
-    border-spacing: 0;
-}
-table.products {
-    font-size: 0.875rem;
-}
-table.products tr {
-    background-color: rgb(96 165 250);
-}
-table.products th {
-    color: #ffffff;
-    padding: 0.5rem;
-}
-table tr.items {
-    background-color: rgb(241 245 249);
-}
-table tr.items td {
-    padding: 0.5rem;
-}
-.total {
-    text-align: right;
-    margin-top: 1rem;
-    font-size: 0.875rem;
+
+div.kiri {
+ position: absolute;
+ bottom: 100px;
+ left: 10px;     
 }
