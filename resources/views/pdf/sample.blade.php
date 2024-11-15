@@ -73,6 +73,12 @@ div.kiri {
     <tbody>
     <p>Date Range: {{ $start_date }} to {{ $end_date }}</p>
 
+    @php
+    // Cek apakah $allData memiliki data
+    $lastItem = $allData->last();
+    $lastKey = $allData->isEmpty() ? null : $allData->count(); // Pastikan $lastKey hanya diset jika $allData tidak kosong
+    @endphp
+
     @foreach($allData as $key => $purchase)
                 <tr>
                     <td>{{ $key + 1 }}</td>
@@ -81,7 +87,7 @@ div.kiri {
                     <td>{{ $purchase->buying_qty }}</td>
                 </tr>
             @endforeach
-     
+     @if($lastItem)
 
         <tr>
           <td style="text-align: center; font-size: 12px;">{{ $key + 1 }}</td>             
@@ -90,6 +96,7 @@ div.kiri {
           <td style="text-align: center; font-size: 12px;">{{ $purchase->buying_qty }}</td>
 
         </tr>
+      @endif
 
       
 

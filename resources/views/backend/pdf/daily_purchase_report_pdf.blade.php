@@ -148,7 +148,7 @@
                                                 <a href="javascript:window.print()"
                                                     class="btn btn-success waves-effect waves-light"><i
                                                         class="fa fa-print"></i></a>
-                                                <a href="{{ route('daily.view.pdf') }}"
+                                                <a href="{{ route('daily.view.pdf', ['start_date' => $start_date, 'end_date' => $end_date]) }}"
                                                     class="btn btn-primary waves-effect waves-light ms-2">Download</a>
                                             </div>
                                         </div>

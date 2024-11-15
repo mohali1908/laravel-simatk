@@ -134,28 +134,30 @@ class PurchaseController extends Controller
         return view('backend.pdf.daily_purchase_report_pdf',compact('allData','start_date','end_date'));
 
 
-
     }// End Method 
 
     public function viewPDF(Request $request)
     {
-        // Retrieve start and end dates from the request
-        $start_date = $request->query('start_date', date('Y-m-d')); // Default to today if not provided
-        $end_date = $request->query('end_date', date('Y-m-d'));     // Default to today if not provided
+        // Retrieve start and end dates from the query string; default to today if not provided
+    $start_date = $request->query('start_date', date('Y-m-d'));
+    $end_date = $request->query('end_date', date('Y-m-d'));
 
-        // Convert to date format and fetch data within the date range
-        $sdate = date('Y-m-d', strtotime($start_date));
-        $edate = date('Y-m-d', strtotime($end_date));
+    // Format dates for querying and ensure the date range is consistent
+    $sdate = date('Y-m-d', strtotime($start_date));
+    $edate = date('Y-m-d', strtotime($end_date));
 
-        $allData = Purchase::whereBetween('date', [$sdate, $edate])
-                            ->where('status', '1')
-                            ->get();
+    // Query the purchases within the specified date range and status
+    $allData = Purchase::whereBetween('date', [$sdate, $edate])
+                        ->where('status', '1')
+                        ->get();
 
-        // Load the view and pass data for the PDF
-        $pdf = Pdf::loadView('pdf.sample', compact('allData', 'start_date', 'end_date'));
+     // Load the view with purchase data, start, and end dates
+     $pdf = Pdf::loadView('pdf.sample', compact('allData', 'start_date', 'end_date'));
 
-        // Download the PDF with a filename
-        return $pdf->download('daily_purchase_report_' . $start_date . '_to_' . $end_date . '.pdf');
+     // Download the PDF with a specified filename format
+     return $pdf->download('daily_purchase_report_' . $start_date . '_to_' . $end_date . '.pdf');
+
+   
 
     }
 
