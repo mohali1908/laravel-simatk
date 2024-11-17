@@ -32,7 +32,7 @@
                                 <div class="invoice-title">
 
                                     <h3>
-                                        <img src="{{ asset('backend/assets/images/logo-sm.png') }}" alt="logo"
+                                        <img src="{{ asset('logo/pa-cilegon.png') }}" alt="logo"
                                             height="24" /> Victory Code
                                     </h3>
                                 </div>
@@ -113,8 +113,7 @@
                                                         <td class="text-center">{{ date('d-m-Y',strtotime($item->date))
                                                             }}</td>
                                                         <td class="text-center">{{ $item['product']['name'] }}</td>
-                                                        <td class="text-center">{{ $item->buying_qty }} {{
-                                                            $item['product']['unit']['name'] }} </td>
+                                                        <td class="text-center">{{ $item->buying_qty }} {{$item['product']['unit']['name'] }} </td>
                                                         <td class="text-center">{{ $item->unit_price }}</td>
                                                         <td class="text-center">{{ $item->buying_price }}</td>
 
@@ -148,8 +147,16 @@
                                                 <a href="javascript:window.print()"
                                                     class="btn btn-success waves-effect waves-light"><i
                                                         class="fa fa-print"></i></a>
+
+                                                 <!-- Tombol Download PDF -->
                                                 <a href="{{ route('daily.view.pdf', ['start_date' => $start_date, 'end_date' => $end_date]) }}"
                                                     class="btn btn-primary waves-effect waves-light ms-2">Download</a>
+
+                                                 <!-- Tombol Download Word -->
+                                                <a href="{{ route('daily.view.word', ['start_date' => $start_date, 'end_date' => $end_date]) }}" 
+                                                    class="btn btn-info waves-effect waves-light ms-2">
+                                                    <i class="fa fa-file-word"></i> Download Word
+                                                </a>
                                             </div>
                                         </div>
                                     </div>

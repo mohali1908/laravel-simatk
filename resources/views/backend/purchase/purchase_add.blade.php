@@ -10,7 +10,7 @@
     <div class="card">
         <div class="card-body">
 
-            <h4 class="card-title">Tambah Pembelian  </h4><br><br>
+            <h4 class="card-title">Tambah Pengajuan  </h4><br><br>
             
     <div class="row">
         <div class="col-md-4">
@@ -22,7 +22,7 @@
 
         <div class="col-md-4">
             <div class="md-3">
-                <label for="example-text-input" class="form-label">No. Pembelian</label>
+                <label for="example-text-input" class="form-label">No. Pengajuan</label>
                  <input class="form-control example-date-input" name="purchase_no" type="text"  id="purchase_no">
             </div>
         </div>
@@ -114,7 +114,7 @@
                 </tbody>                
             </table><br>
             <div class="form-group">
-                <button type="submit" class="btn btn-info" id="storeButton"> Tambah Pembelian</button>
+                <button type="submit" class="btn btn-info" id="storeButton"> Tambah Pengajuan</button>
                 
             </div>
             

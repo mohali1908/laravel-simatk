@@ -34,8 +34,8 @@
                     <div class="text-center mt-4">
                         <div class="mb-3">
                             <a href="" class="auth-logo">
-                                <img src="{{ asset('logo/black.png') }}" width="150" class="logo-dark mx-auto" alt="">
-                                <img src="{{ asset('logo/black.png') }}" width="150" class="logo-light mx-auto" alt="">
+                                <img src="{{ asset('logo/pa-cilegon.png') }}" width="150" class="logo-dark mx-auto" alt="">
+                                
                             </a>
                         </div>
                     </div>

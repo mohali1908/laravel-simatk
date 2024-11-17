@@ -9,7 +9,7 @@
                         <div class="row">
                             <div class="col-12">
                                 <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                                    <h4 class="mb-sm-0">Purchase All</h4>
+                                    <h4 class="mb-sm-0">Daftar Pengajuan</h4>
 
                                      
 
@@ -23,21 +23,23 @@
             <div class="card">
                 <div class="card-body">
 
-    <a href="{{ route('purchase.add') }}" class="btn btn-dark btn-rounded waves-effect waves-light" style="float:right;"><i class="fas fa-plus-circle">  Purchase Pending </i></a> <br>  <br>               
+                  
 
-                    <h4 class="card-title">Purchase All Pending Data </h4>
+                    <h4 class="card-title">Daftar Pengajuan </h4>
                     
 
                     <table id="datatable" class="table table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
                         <thead>
                         <tr>
-                            <th>Sl</th>
-                            <th>Purhase No</th> 
-                            <th>Date </th>
+                            <th>No.</th>
+                            <th>No. Pengajuan</th> 
+                            <th>Tanggal </th>
                             <th>Supplier</th>
-                            <th>Category</th> 
+                            <th>Kategori</th>
+                            <th>Nama Produk</th> 
                             <th>Qty</th> 
-                            <th>Product Name</th> 
+                            <th>Harga Satuan</th>
+                            <th>Total Harga</th>
                             <th>Status</th>
                             <th>Action</th>
                             
@@ -53,8 +55,10 @@
                 <td> {{ date('d-m-Y',strtotime($item->date))  }} </td> 
                  <td> {{ $item['supplier']['name'] }} </td> 
                  <td> {{ $item['category']['name'] }} </td> 
-                 <td> {{ $item->buying_qty }} </td> 
                  <td> {{ $item['product']['name'] }} </td> 
+                 <td> {{ $item->buying_qty }} </td>
+                 <td>Rp. {{ number_format($item->unit_price, 0, ',', '.') }}</td>
+                 <td>Rp. {{ number_format($item->buying_price, 0, ',', '.') }}</td> 
 
                  <td> 
                     @if($item->status == '0')

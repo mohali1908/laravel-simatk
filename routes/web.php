@@ -147,6 +147,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
         Route::get('/daily/purchase/report', 'DailyPurchaseReport')->name('daily.purchase.report');
         Route::get('/daily/purchase/pdf', 'DailyPurchasePdf')->name('daily.purchase.pdf');
         Route::get('/daily/purchase/view-pdf', 'viewPDF')->name('daily.view.pdf');
+        Route::get('/daily/purchase/view-word', 'viewWord')->name('daily.view.word');
     });
 
 
