@@ -71,7 +71,19 @@
                         <li><a href="{{ route('product.all') }}">All Product</a></li>
 
                     </ul>
-                </li> -->
+                </li> 
+                <li>
+                    <a href="javascript: void(0);" class="has-arrow waves-effect">
+                        <i class="ri-oil-fill"></i>
+                        <span>Manage Purchase</span>
+                    </a>
+                    <ul class="sub-menu" aria-expanded="false">
+                        <li><a href="{{ route('purchase.all') }}">All Purchase</a></li>
+                        <li><a href="{{ route('purchase.pending') }}">Approval Purchase</a></li>
+                        <li><a href="{{ route('daily.purchase.report') }}">Daily Purchase Report</a></li>
+
+                    </ul>
+                </li>-->
 
                 @if(session('menus'))       
                     @foreach (session('menus') as $menu)
@@ -105,18 +117,7 @@
 
               
 
-                <li>
-                    <a href="javascript: void(0);" class="has-arrow waves-effect">
-                        <i class="ri-oil-fill"></i>
-                        <span>Manage Purchase</span>
-                    </a>
-                    <ul class="sub-menu" aria-expanded="false">
-                        <li><a href="{{ route('purchase.all') }}">All Purchase</a></li>
-                        <li><a href="{{ route('purchase.pending') }}">Approval Purchase</a></li>
-                        <li><a href="{{ route('daily.purchase.report') }}">Daily Purchase Report</a></li>
-
-                    </ul>
-                </li>
+                
 
 
                 <li>
