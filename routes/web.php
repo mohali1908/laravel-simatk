@@ -93,12 +93,15 @@ Route::middleware(['auth', 'verified'])->group(function () {
 
     // Request All Route
     Route::controller(RequestController::class)->group(function () {
+        Route::get('/request/all', 'RequestAll')->name('request.all');
+        Route::get('/requests/detail/{id}', 'requestDetail')->name('requests.detail');
         Route::get('/request/add', 'RequestAdd')->name('request.add');
         Route::post('/request/store', 'RequestStore')->name('request.store');
         Route::get('/request/edit/{id}', 'RequestEdit')->name('request.edit');
         Route::post('/request/update', 'RequestUpdate')->name('request.update');
         Route::get('/request/delete/{id}', 'RequestDelete')->name('request.delete');
-    
+        Route::get('/request/data/all', 'RequestData')->name('request.data');
+        Route::get('/request/view-pdf/{id}', 'viewPDF')->name('request.print.pdf');
     });
 
     // Unit All Route
@@ -146,8 +149,8 @@ Route::middleware(['auth', 'verified'])->group(function () {
 
         Route::get('/daily/purchase/report', 'DailyPurchaseReport')->name('daily.purchase.report');
         Route::get('/daily/purchase/pdf', 'DailyPurchasePdf')->name('daily.purchase.pdf');
-        Route::get('/daily/purchase/view-pdf', 'viewPDF')->name('daily.view.pdf');
-        Route::get('/daily/purchase/view-word', 'viewWord')->name('daily.view.word');
+        Route::get('/daily/purchase/view-pdf', 'viewPDF')->name('daily.purcase.view.pdf');
+        Route::get('/daily/purchase/view-word', 'viewWord')->name('daily.purcase.view.word');
     });
 
 

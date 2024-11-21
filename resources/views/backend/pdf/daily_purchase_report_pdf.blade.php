@@ -149,11 +149,11 @@
                                                         class="fa fa-print"></i></a>
 
                                                  <!-- Tombol Download PDF -->
-                                                <a href="{{ route('daily.view.pdf', ['start_date' => $start_date, 'end_date' => $end_date]) }}"
+                                                <a href="{{ route('daily.purcase.view.pdf', ['start_date' => $start_date, 'end_date' => $end_date]) }}"
                                                     class="btn btn-primary waves-effect waves-light ms-2">Download</a>
 
                                                  <!-- Tombol Download Word -->
-                                                <a href="{{ route('daily.view.word', ['start_date' => $start_date, 'end_date' => $end_date]) }}" 
+                                                <a href="{{ route('daily.purcase.view.word', ['start_date' => $start_date, 'end_date' => $end_date]) }}" 
                                                     class="btn btn-info waves-effect waves-light ms-2">
                                                     <i class="fa fa-file-word"></i> Download Word
                                                 </a>

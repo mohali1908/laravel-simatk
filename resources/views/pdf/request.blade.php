@@ -26,14 +26,24 @@
       margin: 10px 0;
       font-size: 12px; /* Set font size for table content */
     }
-    .tabel2 th, .tabel2 td {
-      padding: 8px;
-      text-align: center;
-      border: 1px solid #000;
+    .tabel2 th {
+    padding: 8px;
+    text-align: center;
+    border: 1px solid #000;
+    font-weight: bold; /* Membuat teks tebal */
+    font-size: 14px; /* Ukuran font lebih besar untuk header */
+    background-color: #f2f2f2; /* Opsional: Memberi warna latar belakang pada header */
+    }
+
+    .tabel2 td {
+        padding: 8px;
+        text-align: center;
+        border: 1px solid #000;
+        font-weight: normal; /* Teks normal untuk isi tabel */
+        font-size: 12px; /* Ukuran font untuk isi tabel */
     }
     .keterangan-table {
       width: 100%;
-      border-top: solid 1px #000;
       margin-top: 20px;
       border-collapse: collapse;
       font-size: 12px; /* Set font size for keterangan content */
@@ -49,7 +59,7 @@
     }
     table.signature-table td {
       width: 50%;
-      text-align: center;
+      text-align: left;
       vertical-align: top;
       padding: 20px;
     }
@@ -78,49 +88,36 @@
             PENGADILAN AGAMA CILEGON KELAS 1B
         </p>
         <p style="font-size: 10px; margin: 5px 0 0 0;">
-            Kompleks Perkantoran Sukmajaya Mandiri, Jalan Jenderal Ahmad Yani Kav.5, <br> 
-            Sukmajaya, Kec. Jombang, Kota Cilegon, Banten 42411<br>
+            Kompleks Perkantoran Sukmajaya Mandiri, Jalan Jenderal Ahmad Yani Kav.5, <br>
+             Sukmajaya, Kec. Jombang, Kota Cilegon, Banten 42411<br>
             Website: <a href="https://www.pa-cilegon.go.id" target="_blank">https://www.pa-cilegon.go.id</a> / Email: pa_clg@yahoo.com
         </p>
       </td>
     </tr>
   </table>
   <hr>
-  <p align="center" style="font-weight: bold;">RENCANA ANGGARAN BIAYA (RAB)</p>
-  <p align="center" style="font-weight: bold;">ADMINISTRASI PERKARA PENGADILAN AGAMA CILEGON</p>
+  <p align="center" style="font-weight: bold; text-decoration: underline; font-size: 16px;">BUKTI PERMINTAAN BARANG (BPP)</p>
   
+
   <table class="tabel2">
     <thead>
       <tr>
-        <th>No.</th>
-        <th>Uraian Pekerjaan</th>
-        <th>Satuan</th>
-        <th>Volume</th>
-        <th>Harga Satuan (Rp)</th>
-        <th>Jumlah (Rp)</th>
+        <th width="10%">No.</th>
+        <th width="40%">Produk</th>
+        <th width="20%">Unit</th>
+        <th width="20%">Jumlah</th>
       </tr>
     </thead>
     <tbody>
-      @php
-        $total_sum = 0; // Inisialisasi total
-      @endphp
-      @foreach($allData as $key => $purchase)
+
+      @foreach($allData as $request)
         <tr>
           <td>{{ $key + 1 }}</td>
-          <td>{{ $purchase['product']['name'] }}</td>
-          <td>{{ $purchase['product']['unit']['name'] }}</td>
-          <td>{{ $purchase->buying_qty }}</td>
-          <td>Rp. {{ number_format($purchase->unit_price, 0, ',', '.') }}</td>
-          <td>Rp. {{ number_format($purchase->buying_price, 0, ',', '.') }}</td>
+          <td>{{ $request->product_name}}</td>
+          <td>{{ $request->unit_name}}</td>
+          <td>{{ $request->quantity}}</td>
         </tr>
-        @php
-          $total_sum += $purchase->buying_price;
-        @endphp
       @endforeach
-      <tr>
-        <td colspan="5" align="right"><b>Total Harga</b></td>
-        <td><b>Rp. {{ number_format($total_sum, 0, ',', '.') }}</b></td>
-      </tr>
     </tbody>
   </table>
 
@@ -137,23 +134,22 @@
   <table class="signature-table">
     <tr>
       <td>
-        <p>Bendahara Biaya Proses/ATK Penyelesaian Perkara</p>
-        <p class="signature-name">Astriani Lantuka, A.Md. Kep., S.H.</p>
+        <p>Diminta Oleh :</p>
+        @foreach($userData as $user)
+        <p class="signature-name">{{ $user->user_name }}</p>
+        @endforeach
       </td>
       <td>
-        <p>Bendahara Barang Biaya Proses/ATK Penyelesaian Perkara</p>
+        <p>Disetujui Oleh :</p>
         <p class="signature-name">Uchtina Dewi</p>
       </td>
     </tr>
     <tr>
-      <td>
-        <p>Pejabat Pengelola Biaya Proses</p>
+      <td colspan="1">
+        <p>Dikeluarkan Oleh :</p>
         <p class="signature-name">Hikmah Nurmala, S.H., MH</p>
       </td>
-      <td>
-        <p>Pejabat Pembuat Komitmen Biaya Proses</p>
-        <p class="signature-name">Wadihah, S.H.I.</p>
-      </td>
+     
     </tr>
   </table>
 </body>

@@ -59,13 +59,10 @@ class AuthenticatedSessionController extends Controller
             // Filter submenu berdasarkan role pengguna
             if ($userRole == 'Admin') {
                 // Admin bisa mengakses submenu dengan role 'admin', 'user', atau 'all users'
-                $query->whereIn('role', ['Admin', 'User', 'All users']);
-            } elseif ($userRole == 'user') {
+                $query->whereIn('role', ['Admin', 'User']);
+            } elseif ($userRole == 'User') {
                 // User hanya bisa mengakses submenu dengan role 'user' atau 'all users'
-                $query->whereIn('role', ['User', 'All users']);
-            } else {
-                // Jika pengguna tidak teridentifikasi, hanya tampilkan submenu dengan role 'all users'
-                $query->where('role', 'All users');
+                $query->whereIn('role', ['User']);
             }
         }])
         ->orderBy('order') // Urutkan menu berdasarkan kolom 'order'
